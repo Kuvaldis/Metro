@@ -11,6 +11,7 @@
     <modules>
         <module>metro-core</module>
         <module>metro-api</module>
+        <module>metro-app</module>
     </modules>
 
     <dependencies>
@@ -19,6 +20,26 @@
             <artifactId>groovy-all</artifactId>
             <version>2.2.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.0.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.0.3.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.6</version>
+        </dependency>
+
+
+
     </dependencies>
 
 

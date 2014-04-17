@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
  * Time: 11:17
  */
 @Slf4j
-@Component
+@Component('propertiesBuilder')
 class PropertiesBuilder {
     PropertiesHolder build(List<String> configFilesList) {
         def env = System.getProperty("env")

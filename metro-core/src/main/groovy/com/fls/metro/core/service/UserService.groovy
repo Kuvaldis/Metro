@@ -57,4 +57,8 @@ class UserService extends WithSqlService implements UserDetailsService {
         }
         return result
     }
+
+    List<User> userList() {
+        [new User(username: 'aaa')]
+    }
 }

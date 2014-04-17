@@ -1,4 +1,4 @@
-package com.fls.metro.api.server
+package com.fls.metro.app.server
 
 import groovy.transform.CompileStatic
 
@@ -8,7 +8,7 @@ import groovy.transform.CompileStatic
  * Time: 17:12
  */
 @CompileStatic
-class ServletConfiguration {
+class RestServletConfiguration {
     String contextPath;
     String configLocation;
 }

@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="jetty" class="com.fls.metro.api.server.Jetty">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.fls.metro.app"/>
+
+    <bean id="jetty" class="com.fls.metro.app.server.Jetty">
         <property name="host" value="${server.host}"/>
         <property name="port" value="${server.port}"/>
-        <property name="servlets">
+        <property name="restServlets">
             <list>
-                <bean class="com.fls.metro.api.server.ServletConfiguration">
-                    <property name="configLocation" value="classpath*:apiContext.xml"/>
-                    <property name="contextPath" value="/api/*"/>
+                <bean class="com.fls.metro.app.server.RestServletConfiguration">
+                    <property name="configLocation" value="classpath*:apiAdminContext.xml"/>
+                    <property name="contextPath" value="/api/admin/v1/*"/>
+                </bean>
+                <bean class="com.fls.metro.app.server.RestServletConfiguration">
+                    <property name="configLocation" value="classpath*:apiImContext.xml"/>
+                    <property name="contextPath" value="/api/im/v1/*"/>
                 </bean>
             </list>
         </property>
